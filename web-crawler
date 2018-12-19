@@ -1,0 +1,61 @@
+“””Weather forecasting program based on time series methods”””
+
+# Importing necessary libraries lxml (html) and requests
+from lxml import html
+import requests
+
+
+“””Importing web page with requests.get, parse it using with html module 
+and save the weather temperature results in weather variable”””
+page = requests.get(“https://www.foreca.fi/Poland/Krakow”)
+weather = html.fromstring(page.content)
+
+
+#This will create a list of current weather temperature in temperature variable
+temperature = weather.xpath(“
+
+
+# This will create a list of temperatures:
+buyers = tree.xpath('//div[@title=""]/text()')
+#This will create a list of temperatures
+prices = tree.xpath('//span[@class=""]/text()')
+print “temperature: “, temperature
+
+
+# Saving data into a separate and existing file
+With open(“temperatures.txt”, “A”) as file:
+temperatures.writelines(“temperatures”)
+
+
+# Saving temperatures.txt file to file_temperatures variable
+file_temperatures = open(“temperatures.txt”, “r”)
+
+
+# Printing the file_temperatures variable
+print file_temperatures.read()
+
+
+“””Importing necessary libraries pandas and numpy for time series analysis
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.formula.api as smf
+import statsmodels.tsa.api as smt
+import statsmodels.api as sm
+import scipy.stats as scs
+
+
+“””Predicting weather by using Holt-Winters method”””
+model_fit = ExponentialSmoothing(np.asarray(temperatures[1]), seasonal_periods = 0 , trend = “add”, seasonal = “add”,).fit()
+
+
+# Saving the predictions to a file
+Model_fit.save(“temperature_predictions.pickle”)
+
+
+# Saving temperature_predictions.txt file to file_predictions vatiable
+file_predictions = open(“temperature_predictions.txt”, “r”)
+
+
+# Printing the file_temperatures variable
+print file_predictions.read()
