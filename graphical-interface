@@ -1,0 +1,17 @@
+# Starting to program graphic interface for weather program
+# Importing Tkinter and other necessary libraries
+
+import tkinter
+import tkMessageBox
+
+# Creating main window with weather update buttons
+
+top = tkinter.TK()
+
+Def updateCallBack():
+tkMessageBox.showinfo(print file_predictions.read())
+
+B = Tkinter.Button(top, text = “weather forecast”, command = updateCallBack)
+
+B.pack()
+top.mainloop()
